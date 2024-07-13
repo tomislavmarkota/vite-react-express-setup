@@ -5,13 +5,12 @@ import cors from 'cors';
 dotenv.config();
 
 const app: Application = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.get('/', (req: Request, res: Response) => {
-  // res.send(JSON.stringify({ message: 'Welcome to Express & TypeScript Server' }));
-  res.status(200).send({ message: 'Welcome to Express & TypeScript Server' });
+app.get('/api/test', (req: Request, res: Response) => {
+  res.json({ msg: 'data submitted successfully' });
 });
 
 app.listen(port, () => {
